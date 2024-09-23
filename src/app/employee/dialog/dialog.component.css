@@ -1,0 +1,20 @@
+p{
+    color: black;
+}
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    border: 0;
+    background-color:rgb(243, 95, 95);
+}
+.button{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+.logout{
+    margin-left: 20px;
+    background-color:rgb(132, 177, 214);
+}

@@ -1,0 +1,9 @@
+<div>
+    <form  id="wrapper" [formGroup]="verifyOtp" (ngSubmit)="verify()">
+        <h1>Verify Opt</h1>
+        <p>Enter the opt which was sent to your mobile number to Reset the password</p>
+        <label for="Otp">Enter the opt</label>
+        <input type="text" id="Otp" formControlName="enterOtp">
+        <button type="submit">Verify</button>
+    </form>
+</div>

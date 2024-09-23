@@ -1,0 +1,831 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0066cc;
+    padding: 20px 30px;    
+    color: white;
+}
+
+.logo {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+.logo-overlay{
+    margin-left: 50%;
+    font-size: 24px;
+    line-height: 1.2;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50pxpx;
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon{
+   
+    margin-right: 40px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.employee-name {
+    font-weight: bold;
+}
+
+.job-role {
+    font-size: 12px;
+}
+
+.dropdown-icon {
+    margin-left: 10px;
+    font-size: 12px;
+}
+.icon{
+    color: white;
+}
+.notification-icon{
+    color: white;    
+}
+
+.logo {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+.logo-overlay{
+    margin-left: 50%;
+    font-size: 24px;
+    line-height: 1.2;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50pxpx;
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.employee-name {
+    font-weight: bold;
+}
+
+.job-role {
+    font-size: 12px;
+}
+
+.dropdown-icon {
+    margin-left: 10px;
+    font-size: 12px;
+}
+.icon{
+    color: white;
+}
+.notification-icon{
+    color: white;    
+}
+.links {
+    display: flex;
+    gap: 100px; 
+  }
+  
+  .links button{
+    flex: 1; /* Optional: ensures each link takes an equal amount of space */
+    color: gray;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #0066cc;
+    border: 0;
+  }
+  .links a.active {
+    color: white; /* Change this to the color you want when the link is clicked */
+  }
+  /* app.component.css */
+.header .links .active .link {
+    color: white; /* Change this to the desired color */
+  }
+  table {
+    width: 90%;
+    padding-bottom: 20%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 18px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  
+  .table, .table tr,.table td{
+    border: 1px solid rgb(163, 163, 163);
+    width:50px;
+    height: 30px;
+  }
+  
+  .table th, .table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table thead {
+    background-color: #f2f2f2;
+  }
+  
+  .table-bordered {
+    border: 1px solid black;
+  }
+  
+  .table{
+    width: 100%;
+   
+    background-color: white;
+    border-collapse: collapse;
+    margin-top: 50px;
+
+  }
+  .DashBoard{
+    padding-bottom: 5%;
+    background-color:  #F0F8FF;
+  }
+  .DashBoard h1{
+    padding-bottom: 1%;
+    margin: 0;
+  }
+  th{
+    background-color: #1b598f;
+    color: black;
+
+font-size: 16px;
+}
+
+.heading{
+    background-color: #0066cc;
+}
+.leave-approval {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0;
+    width: 60%;
+    padding: 20px;
+    max-height: 600px;
+    Overflow-y:auto;
+
+}
+
+.leave-types {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.leave-type {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.leave-requests {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.leave-request {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 100px;
+    width: 95%;
+}
+
+.employee-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.employee-info {
+    flex-grow: 1;
+}
+
+.employee-name {
+    font-weight: bold;
+    display: block;
+}
+
+.employee-id {
+    color: grey;
+}
+
+.leave-date {
+    text-align: right;
+}
+
+.request-date {
+    display: block;
+    color: grey;
+}
+
+.leave-period {
+    font-weight: bold;
+    color: grey;
+    display: flex;
+    gap: 15px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+
+}
+
+.approve-button, .reject-button {
+    padding: 10px;
+    border: none;
+    width: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.approve-button {
+    background-color: green;
+}
+
+.reject-button {
+    background-color: red;
+}
+
+.title{
+    padding-bottom: 1%;
+}
+.flex-container {
+  display: flex;
+  gap: 20px;
+}
+/* app.component.css */
+.example-element-row {
+    cursor: pointer;
+  }
+  .example-element-row:hover {
+    background: #f5f5f5;
+  }
+  .example-detail-row {
+    height: 0;
+  }
+  .element-detail {
+    padding: 16px;
+  }
+  button {
+    margin: 0;
+    padding: 4px 8px;
+  }
+ .holidays-section {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ 
+  margin: 0 auto;
+  width: 30%;
+}
+
+
+.holidays-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.holidays-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.view-all-btn {
+  background-color: #4682B4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.view-all-btn:hover {
+  background-color: #315f85;
+}
+
+.holidays-list {
+  margin-top: 20px;
+}
+
+.holiday-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.holiday-date {
+  background-color: #E0F7FA;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.holiday-date .date {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.holiday-date .month {
+  display: block;
+  font-size: 12px;
+}
+
+.holiday-info {
+  flex-grow: 1;
+}
+
+.holiday-info .holiday-name {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.holiday-info .holiday-day {
+  display: block;
+  font-size: 14px;
+  color: gray;
+}
+ 
+.search-container {
+  padding-top: px;
+}
+.search-container h1 {
+  margin-left: 700px;
+}
+
+.search-container input {
+  width: 50%;
+  height: 40px;
+  padding: 8px;
+  margin-left: 400px;
+  
+  box-sizing: border-box;
+}
+.dashboard-container {
+  padding: 20px;
+}
+
+.table-container {
+  max-height: 100px; /* Adjust height as needed */
+  overflow-y:auto;
+  margin-top: 10px;
+}
+.detail-row {
+  transition: max-height 0.5s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.detail-row.expanded {
+  max-height: 200px; /* Adjust max-height as needed */
+}
+
+.details {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+.expanded .details {
+  display: block;
+}
+
+.detail-row {
+  display: none;
+}
+
+.expanded + .detail-row {
+  display: table-row;
+}
+.leaves-and-holidays-container {
+  display: flex;
+  flex-direction: row; /* Stack sections vertically */
+  gap: 20px; /* Adjust the space between the sections as needed */
+  padding: 20px; /* Add padding around the container */
+}
+
+.leave-approval, .holidays-section {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+}
+
+.holidays-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+
+.title, .holidays-header h2 {
+  margin-bottom: 20px;
+}
+
+
+.leave-request, .holiday-item {
+  margin-bottom: 15px;
+}
+.employee-page {
+  padding: 20px;
+  background-color: #F0F8FF;
+  max-height: 1000px;
+  overflow-y:auto ;
+}
+
+.leave-calendar {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leave-calendar-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.leave-calendar-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.calendar-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4682B4;
+  color: white;
+  cursor: pointer;
+}
+
+.calendar-button:hover {
+  background-color: #5a9bd4;
+}
+
+.total-people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.people-count {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.employee-list {
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.employee-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.employee-info {
+  flex: 1;
+}
+
+.employee-name {
+  font-weight: bold;
+}
+
+.employee-id {
+  color: #888;
+}
+
+.leave-date {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 100px;
+}
+
+.leave-date.blue {
+  background-color: #4682B4;
+}
+
+.leave-date.yellow {
+  background-color: #FFC107;
+}
+
+.leave-date.purple {
+  background-color: #9C27B0;
+}
+.dropdown-icon button{
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  border: 0;
+  cursor: pointer;
+  background-color: #4682B4;
+  color: white;
+}
+.dropdown-icon button:hover{
+  background-color: rgb(237, 179, 5);
+}
+button{
+  cursor: pointer;
+}
+.leave-approval-container {
+  /* Your existing styles */
+}
+
+.approve-button {
+  /* Styles for the approve button */
+}
+
+.notification-box {
+  display: flex;
+  align-items: center;
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+  font-size: 20px; /* Font size */
+  position: fixed; /* Fix position */
+  top: 107px; /* Position from top */
+  right: 20px; /* Position from right */
+  z-index: 1000; /* Make sure it's on top */
+  height: 100px;
+  width: 300px;
+
+}
+
+.notification-box .icon {
+  font-size: 30px; /* Icon size */
+  margin-right: 10px; /* Space between icon and message */
+}
+
+.notification-decline{
+  display: flex;
+  align-items: center;
+  background-color: #a92929; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+  font-size: 20px; /* Font size */
+  position: fixed; /* Fix position */
+  top: 107px; /* Position from top */
+  right: 20px; /* Position from right */
+  z-index: 1000; /* Make sure it's on top */
+  height: 100px;
+  width: 300px;
+}
+.notification-decline .icon {
+  font-size: 30px; /* Icon size */
+  margin-right: 10px; /* Space between icon and message */
+}
+.leave-calendar-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.leave-calendar,
+.employee-list {
+  width: 48%;
+}
+
+.leave-calendar-title,
+.employee-list h1 {
+  text-align: center;
+}
+
+.leave-calendar-buttons {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.calendar-button {
+  padding: 10px;
+  margin: 5px;
+}
+
+.total-people {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.employee-list {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.employee-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.employee-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.employee-info {
+  flex-grow: 1;
+}
+
+.status-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.more-options {
+  cursor: pointer;
+}
+.details{
+  display: flex;
+  gap: 60px;
+}
+.leave-details{
+  background-color: white;
+}
+.leave-request {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.leave-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.employee-info {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+
+
+
+.action-buttons {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 123px; /* Adjust as needed */
+  left:1px;
+  width:100%;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+.info{
+  display: flex;
+  gap: 60px;
+  padding-left: 20px;
+}
+.info .p{
+  color: #888;
+}
+.info .label{
+  color:black;
+  font-weight: 600
+}
+.input   {
+  padding-left: 20px;
+
+
+}
+.input #Reason{
+  height: 100px;
+  width: 50%;
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+.input label{
+  margin-bottom: 5px;
+}
+.approval-date{
+  display: flex;
+  gap: 20px;
+  padding-bottom: 5px;
+
+}
+.search-bars-container{
+  display: flex;
+  gap: 300px;
+  margin-left: 35%;
+}
+
+.search-bar input{
+  width: 500px;
+  height: 50px;
+  
+
+}

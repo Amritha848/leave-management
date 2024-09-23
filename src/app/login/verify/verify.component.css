@@ -1,0 +1,32 @@
+#wrapper{
+    display: block;
+    align-items: center;
+    align-content: center;
+    margin-top:250px;
+    margin-left: 30%;
+}
+h1{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: white;
+}
+p{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: white;
+}
+label{
+    display:flex ;
+    align-items: center;
+    align-content: center;
+    color: white;
+    font-weight: 500;
+    margin-top: 20px;
+}
+#Otp{
+    display: flex;
+    align-items: center;
+    align-items: center;
+}

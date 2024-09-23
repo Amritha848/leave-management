@@ -1,0 +1,13 @@
+<div class="Box">
+  <div *ngIf="showSpinner" class="spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="showSuccessMessage" class="message">
+    <button><i class="fa-solid fa-xmark" style="color: #e13737;" (click)=" closeDialog()"></i></button>
+    <h1>Registration Successful</h1>
+    <p>Your Employee Id will be sent to your mail.</p>
+    
+    
+  </div>
+</div>
+

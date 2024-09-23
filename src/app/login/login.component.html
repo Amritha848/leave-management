@@ -1,0 +1,21 @@
+<div class="container">
+  <img class="loginimg" src="https://www.scnsoft.com/blog-pictures/software-development-outsourcing/leave-management-software.png">
+  <img class="logo-overlay" src="https://uploads-ssl.webflow.com/60cb8979aa0d47232e309268/60cb9e4df1877a2388b5c590_IVIS_Logo-p-500.png" alt="Logo">
+  <div id="wrapper">
+    <div class="form">
+      <form [formGroup]="loginForm" id="form">
+        <h1>Login</h1>
+        <label for="EID">Employee Id:</label>
+        <i class="fa fa-user iconu"></i>
+        <input type="text" id="EID" name="employeeId" formControlName="userId">
+        <i class="fa fa-lock iconv"></i>
+        <label for="password">Password</label>
+        <input [type]="changetype ? 'password' : 'text'" id="password" name="password" formControlName="password">
+        <span class="eye" (click)="viewpass()"><i [ngClass]="visible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i></span>
+        <a class="ForgotPassword" routerLink="/ForgotPassword">Forgot Password</a>
+        <button class="btn" type="submit" (click)="loginNew()">Login</button>
+        <p class="registernow">Don't have an account? <a class="register" routerLink="/register">Register</a></p>
+      </form>
+    </div>
+  </div>
+</div>

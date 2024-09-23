@@ -1,0 +1,31 @@
+export const Dummy_users= [
+{
+    id:'E1',
+    name:'john',
+    role:'ROLE_EMPLOYEE',
+    Email:'john1234@gmail.com',
+    password:'john',
+},
+{
+    id:'E2',
+    name:'caterine',
+    role:'ROLE_EMPLOYEE',
+    Email:'caterine7654@gmail.com',
+    password:'caterine',
+},
+{
+    id:'E3',
+    name:'ava',
+    role:'ROLE_EMPLOYEE',
+    Email:'ava9867@gmail.com',
+    password:'ava',
+},
+{
+    id:'M1',
+    name:'sachine',
+    role:'ROLE_MANAGER',
+    Email:'sachinemandala@gmail.com',
+    password:'sachine',
+},
+
+]

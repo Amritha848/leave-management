@@ -1,0 +1,177 @@
+.container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    height: 100vh; /* Full viewport height */
+}
+
+.loginimg {
+    width: 65%;
+    height: 100%;
+    display: block; 
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    margin-left: 150px;/* Adjust spacing between image and form */
+}
+
+.ivis-logo {
+    width: 300px;
+    height: 50px;
+}
+
+h1 {
+    
+    color: black;
+    margin-left: 40%;
+    margin-bottom: 10%;
+}
+
+#EID, #password {
+    width: 300px;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+   
+    font-size: 500;
+    border: none; /* Remove border */
+    border: 1px solid rgb(215, 215, 215); /* Add bottom border for underline effect */
+    outline: none; /* Remove outline */
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+input{
+    margin-top: 20px;
+    padding-left: 40px;
+}
+label{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+
+
+.ForgotPassword {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    color: black;
+}
+
+.register {
+    font-weight: 500;
+    color: black;
+}
+
+.registernow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.btn {
+    background-color: rgb(29, 130, 218);
+    color: white;
+    height: 40px;
+    border-radius: 20px;
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 100px;
+    font-size: 19px;
+    font-weight: 500;
+    border: 0;
+}
+
+.Manager{
+    font-size: 22px;
+    border: none;
+    outline:none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.Employee{
+    font-size: 22px;
+    border: none;
+    outline:none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    background-color:rgb(237, 179, 5);
+    color: black;
+    cursor: pointer;
+}
+form{
+    margin-left: 20px;
+}
+
+.h1over {
+    color: white; 
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.iconu {
+    position: absolute;
+    top: 38%;
+    right:435px;
+    transform: translateY(-50%);
+    color: black;
+}
+.iconv{
+    position: absolute;
+    right:435px;
+    top: 55%;
+    transform: translateY(-50%);
+    color: black;
+}
+.logo-overlay {
+    position: absolute;
+    top: 5%; /* Adjust this value as needed */
+    left: 10%;
+    transform: translateX(-50%);
+    width: 200px; /* Adjust size as needed */
+}
+.eye{
+    position: absolute;
+    right:150px;
+    top: 55%;
+    transform: translateY(-50%);
+    color: black;
+}
+.alert{
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

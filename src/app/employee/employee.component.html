@@ -1,0 +1,166 @@
+<header class="header">
+  <div class="logo">
+    <img class="logo-overlay" src="https://uploads-ssl.webflow.com/60cb8979aa0d47232e309268/60cbd0c9816f3e2355324080_IVIS_Logo_white.png" alt="Logo">
+  </div>
+  <div class="right-section">
+    <div class="profile">
+      <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Employee Photo" class="profile-photo">
+      <div class="profile-info">
+        <span class="employee-name">{{ info[0].name }}</span><br>
+        <span class="job-role">{{ info[0].id }}</span>
+      </div>
+      <div class="dropdown-icon">
+        <button (click)="openDialog()">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="body">
+  <div class="button">
+    <button (click)="toggleForm()">Leave Form</button>
+  </div>
+  <form [formGroup]="leaveForm">
+    <div class="form-container" [@formSlide]="showForm ? 'open' : 'closed'">
+      <button id="button" (click)="toggleForm()">
+        <i class="fa-solid fa-arrow-right fa-xl"></i>
+      </button>
+      <div class="Fh">
+        <h1>REQUEST FOR LEAVE</h1>
+      </div>
+      <div class="calender">
+        <p style="margin-top: 50px;"> From Date<span class="required-asterisk">*</span>: </p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="fromDatePicker" formControlName="fromDate" (dateChange)="onDateChange($event, 'fromDate')">
+          <mat-datepicker-toggle matIconSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #fromDatePicker></mat-datepicker>
+        </mat-form-field>
+        <p> To Date<span class="required-asterisk">*</span>:</p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="toDatePicker" formControlName="toDate" (dateChange)="onDateChange($event, 'toDate')">
+          <mat-datepicker-toggle matIconSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #toDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="leave-types">
+        <p>Leave Type<span class="required-asterisk">*</span>:</p>
+        <select formControlName="type">
+          <option value="" disabled selected hidden>Select Leave Type</option>
+          <option>CASUAL</option>
+          <option>SICK</option>
+          <option>PRIVILEGE</option>
+        </select>
+      </div>
+      <div class="reason-input">
+        <p>Reason<span class="required-asterisk">*</span>:</p>
+        <input type="text" formControlName="reason" id="reason" name="reason" placeholder="Enter Reason">
+      </div>
+      <div class="submit">
+        <button type="submit" (click)="submitForm()" (click)="toggleForm()">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="charts" >
+    <div class="chart-container">
+      <div class="pie-chart" [chart]="pieChart1 "></div>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #eeeeee;"></span>
+          <span class="legend">{{remainingp}}  Available</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #800080;"></span>
+          <span class="legend">{{leaveCounts.privilegeLeaveCounts}}  Consumed</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <div class="pie-chart" [chart]="pieChart2"></div>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #eeeeee;"></span>
+          <span class="legend">{{remainingc}}  Available</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #FFA500;"></span>
+          <span class="legend">{{leaveCounts.casualLeaveCounts}}  Consumed</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <div class="pie-chart" [chart]="pieChart3"></div>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #eeeeee;"></span>
+          <span class="legend"> {{remainings}}  Available</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #007FFF;"></span>
+          <span class="legend">{{leaveCounts.sickLeaveCounts}}  Consumed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <div class="applied-leaves">
+      <h2>Applied Leaves</h2>
+      <div *ngFor="let leave of leaves" class="leave-item">
+        <div class="leave-details">
+          <div class="date" (click)="toggleExpand(leave)">
+          <div class="From">{{ leave.fromDate }} </div>      
+            <div> {{ leave.toDate }} </div>
+          </div>
+          <p>{{ leave.reason }}</p>
+          <div *ngIf="leave.expanded" class="expanded-content">
+            <!-- Additional details you want to show when expanded -->
+             <div class="expanded">
+             <div class="Leave">
+            <div class="id">{{leave.leaveId}}</div>
+             </div>
+             <div class="type">
+              <div class="leavetype">{{leave.type}}</div>
+             </div>
+            </div>
+            <div class="message">
+              <p>Message:</p>
+              <p class="message-responce">{{leave.message}}</p>
+            </div>
+            <!-- Add more details here if needed -->
+          </div>
+        </div>
+        <div class="leave-actions">
+          <button [ngClass]="getStatusClass(leave.status)" (click)="toggleExpand(leave)">
+            {{ leave.status }}
+          </button>
+          <button *ngIf="leave.status === 'PENDING'" class="cancel" (click)="cancelLeave(leave)">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="holidays">
+        <div class="holidays-section">
+    <div class="holidays-header">
+      <h2>Holidays - 2024</h2>
+    </div>
+    <div class="holidays-list">
+      <div class="holiday-item" *ngFor="let holiday of holidays">
+        <div class="holiday-date">
+          <span class="date">{{ holiday.date | date: 'dd' }}</span>
+          <span class="month">{{ holiday.date | date: 'MMM' }}</span>
+        </div>
+        <div class="holiday-info">
+          <span class="holiday-name">{{ holiday.name }}</span>
+           <span class="holiday-day">{{ holiday.day }}</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner> -->
+</div>

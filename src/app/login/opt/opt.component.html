@@ -1,0 +1,25 @@
+<div class="container">
+    <img class="loginimg" src="https://www.scnsoft.com/blog-pictures/software-development-outsourcing/leave-management-software.png">
+    <img class="logo-overlay" src="https://uploads-ssl.webflow.com/60cb8979aa0d47232e309268/60cb9e4df1877a2388b5c590_IVIS_Logo-p-500.png" alt="Logo">
+
+<div class="wrapper">
+    <form  id="wrapper" [formGroup]="otpForm" (ngSubmit)="verify()">
+        <h1>Verification</h1>
+        <p>Enter the OTP which was sent to your Mobile Number or Email to Reset the password</p>
+        <div class="otp-container">
+            <label for="otp">Mobile Code</label>
+            <div class="otp-inputs">
+              <input type="text" maxlength="1" #otp1 (keyup)="moveFocus(otp1, otp2)">
+              <input type="text" maxlength="1" #otp2 (keyup)="moveFocus(otp2, otp3)">
+              <input type="text" maxlength="1" #otp3 (keyup)="moveFocus(otp3, otp4)">
+              <input type="text" maxlength="1" #otp4 (keyup)="moveFocus(otp4, otp5)">
+              <input type="text" maxlength="1" #otp5 (keyup)="moveFocus(otp5, otp6)">
+              <input type="text" maxlength="1" #otp6 (keyup)="moveFocus(otp6, null)">
+            </div>
+          </div>
+          <label for="Eotp">Email Code</label>
+          <input id="Eotp" placeholder="Enter" formControlName="enterOtp" >
+        <button type="submit">Verify</button>
+    </form>
+</div>
+</div>

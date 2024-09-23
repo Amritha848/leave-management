@@ -1,0 +1,289 @@
+<header class="header">
+  <div class="logo">
+    <img class="logo-overlay" src="https://uploads-ssl.webflow.com/60cb8979aa0d47232e309268/60cbd0c9816f3e2355324080_IVIS_Logo_white.png" alt="Logo">
+  </div>
+  <div class="links">
+    <button (click)="showText('dashboard')" [ngClass]="{'active': activeButton === 'dashboard'}" >
+      <div class="link">DashBoard</div>
+    </button>
+    <button (click)="showText('leaves')" [ngClass]="{'active': activeButton === 'leaves'}">
+      <div class="link">Leaves</div>
+    </button>
+    <button (click)="showText('employee')" [ngClass]="{'active': activeButton === 'employee'}">
+      <div class="link">Employee</div>
+    </button>
+  </div>
+  <div class="right-section">
+    <div class="profile">
+      <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Employee Photo" class="profile-photo">
+      <div class="profile-info">
+        <span class="employee-name">{{ info[0].name }}</span><br>
+        <span class="job-role">{{ info[0].id }}</span>
+      </div>
+      <div class="dropdown-icon">
+        <button (click)="openDialog()">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div *ngIf="activeButton === 'dashboard'" style="color: black; background-color: #F0F8FF;" class="dashboard-container">
+  <form [formGroup]="search">
+  <div class="search-bars-container">
+    <div class="search-bar" >
+      <input type="text" placeholder="Search.." [(ngModel)]="searchText" formControlName="name" />
+    </div>
+ 
+  </div>
+</form>
+  <div class="leaveapproval">
+    <table class="table table">
+      <thead class="primary">
+        <tr>
+          <th scope="col">User Id</th>
+          <th scope="col">Employee Name</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Department Name</th>
+          <th scope="col">Sick Leave</th>
+          <th scope="col">Privilege Leave</th>
+          <th scope="col">Casual Leave</th>
+          <th scope="col">Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mainData | search : searchText" >
+          <td>{{item.userId}}</td>
+          <td>{{item.employeeName}}</td>
+          <td>{{item.mobileNo}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.departmentName}}</td>
+          <td>{{item.sick}}</td>
+          <td>{{item.privilege}}</td>
+          <td>{{item.casual}}</td>
+          <td>{{item.attendance}}</td>
+        </tr>
+        <tr *ngFor="let item of mainData" class="detail-row" [ngClass]="{'expanded': item.expanded}">
+          <td colspan="5">
+            <div class="details" *ngIf="item.expanded">
+              <p>{{item.status}}</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <div *ngIf="activeButton === 'leaves'" style="color: black; background-color: #F0F8FF;" class="leaves-and-holidays-container">
+  <div class="leave-approval">
+    <h1 class="title">Request for Leave Approval</h1>
+    <div class="leave-requests">
+      <div class="leave-request" *ngFor="let request of leaves" (click)="toggle(request)">
+        <img [src]="" alt="Employee Photo" class="employee-photo">
+        <div class="employee-info">
+          <span class="employee-name">{{request.employeeName}}</span>
+          <span class="employee-id">{{request.userId}}</span>
+          <div class="leave-details" >
+            <div class="details" *ngIf="request.expanded">
+              <div class="Type">
+                <p>Type</p>
+              <div><p>{{request.type}}</p></div>
+            </div>
+            <div class="Reason">
+              <p>Reason</p>
+              <div><p>{{request.reason}}</p></div>
+            </div>
+              <div class="LeaveId">
+                <p>Leave Id</p>
+              <div><p>{{request.leaveId}}</p></div>
+              </div>
+              <div class="LeaveId">
+                <p>From Date</p>
+              <div><p>{{request.fromDate}}</p></div>
+              </div>
+              <div class="LeaveId">
+                <p>To Date</p>
+              <div><p>{{request.toDate}}</p></div>
+            
+            </div>
+            <div  [formGroup]="reasonForm"  class="Messagebox">
+              <input placeholder="enter"  formControlName="declineReason">
+            </div>
+            </div>
+       
+          </div>
+        </div>
+        <div class="leave-date">
+          <span class="request-date">{{request.appliedDate}}</span>
+          <span class="leave-period">{{request.fromDate}}</span>
+          
+        </div>
+        <div class="action-buttons">
+          <button class="approve-button" (click)="approve(request)" (click)="approveLeave()">Approve</button>
+          <div *ngIf="showNotification"  (click)="cancelLeave(request)"     class="notification-box success">
+            <span class="icon">✔</span>
+            <span class="message">Leave Approved Successfully</span>
+          </div>
+          <button class="reject-button" (click)="decline()"  (click)="declineleave()">Decline</button>
+          <div *ngIf="show"  (click)="cancelLeave(request)"     class="notification-decline success">
+            <span class="icon">✔</span>
+            <span class="message">Leave Declined Successfully</span>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  <div class="holidays-section">
+    <div class="holidays-header">
+      <h2>Holidays - 2024</h2>
+    </div>
+    <div class="holidays-list">
+      <div class="holiday-item" *ngFor="let holiday of holidays">
+        <div class="holiday-date">
+          <span class="date">{{ holiday.date | date: 'dd' }}</span>
+          <span class="month">{{ holiday.date | date: 'MMM' }}</span>
+        </div>
+        <div class="holiday-info">
+          <span class="holiday-name">{{ holiday.name }}</span>
+          <span class="holiday-day">{{ holiday.day }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div *ngIf="activeButton === 'leaves'" style="color: black; background-color: #F0F8FF;" class="leaves-and-holidays-container">
+  <div class="leave-approval">
+    <h1 class="title">Request for Leave Approval</h1>
+    <div class="leave-requests">
+      <div class="leave-request" *ngFor="let request of leaves" (click)="toggleDropdown(request)">
+        <div class="leave-details-container">
+          <img [src]="" alt="Employee Photo" class="employee-photo">
+          <div class="employee-info">
+            <span class="employee-name">{{request.employeeName}}</span>
+            <span class="employee-id">{{request.userId}}</span>
+            
+          </div>
+          <div class="leave-date">
+            <span class="request-date">{{request.appliedDate}}</span>
+            <span class="leave-period">
+              <div> {{request.fromDate}} </div>
+              <div>{{request.toDate}}</div>
+            </span>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <button class="approve-button" (click)="approve(request)" (click)="approveLeave()">Approve</button>
+          <div *ngIf="showNotification"  (click)="cancelLeave(request)"     class="notification-box success">
+            <span class="icon">✔</span>
+            <span class="message">Leave Approved Successfully</span>
+          </div>
+          <button class="reject-button" (click)="decline()"  (click)="declineleave()">Decline</button>
+          <div *ngIf="show"  (click)="cancelLeave(request)"     class="notification-decline success">
+            <span class="icon">✔</span>
+            <span class="message">Leave Declined Successfully</span>
+          </div>
+        </div>
+        <!-- Dropdown menu -->
+        <!-- Dropdown menu -->
+<div class="action-buttonss">
+  <div *ngIf="request.expanded" class="dropdown-menu" (click)="$event.stopPropagation()">
+    <div class="info">
+      <div class="info1">
+        <p>Leave Id:</p>
+        <p class="label">{{request.leaveId}}</p>
+      </div>
+      <div class="info2">
+        <p>Reason:</p>
+        <p class="label">{{request.reason}}</p>
+      </div>
+      <div class="info3">
+        <p>Type:</p>
+        <p class="label">{{request.type}}</p>
+      </div>
+    </div>
+    <form    [formGroup]="reasonm" class="input">
+      <input id="Reason" placeholder="Enter Message:"  formControlName="message">
+    </form>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="holidays-section">
+    <div class="holidays-header">
+      <h2>Holidays - 2024</h2>
+    </div>
+    <div class="holidays-list">
+      <div class="holiday-item" *ngFor="let holiday of holidays">
+        <div class="holiday-date">
+          <span class="date">{{ holiday.date | date: 'dd' }}</span>
+          <span class="month">{{ holiday.date | date: 'MMM' }}</span>
+        </div>
+        <div class="holiday-info">
+          <span class="holiday-name">{{ holiday.name }}</span>
+          <span class="holiday-day">{{ holiday.day }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div *ngIf="activeButton === 'employee'" style="color: black;"class="employee-page">
+  <div class="leave-calendar-container">
+    <div class="leave-calendar">
+      <h1 class="leave-calendar-title">LEAVE CALENDAR</h1>
+      <div class="leave-calendar-buttons">
+        <button class="calendar-button">Today</button>
+        <button class="calendar-button">Tomorrow</button>
+        <button class="calendar-button">Choose Date</button>
+      </div>
+      <div class="total-people">
+        <span>Total People</span>
+        <span class="people-count"></span>
+      </div>
+      <div class="employee-list">
+        <div class="employee-item" *ngFor="let request of leaves">
+          <img [src]="" alt="Employee Photo" class="employee-photo">
+          <div class="employee-info">
+            <span class="employee-name">{{ request.reason }}</span>
+            <span class="employee-id">{{ request.leaveId }}</span>
+          </div>
+          <div class="leave-date" [ngClass]="getLeaveDateClass(request.status)">
+            <div class="employee-info">
+              <span class="employee-name">{{request.reason}}</span>
+              <span class="employee-id">{{request.leaveId}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="employee-list">
+      <h1>Approvals</h1>
+      <div class="employee-item" *ngFor="let request of approves">
+        <img [src]="" alt="Employee Photo" class="employee-photo">
+        <div class="employee-info">
+          <span class="employee-name">{{ request.employeeName }}</span>
+          <span class="employee-date">{{ request.userId }}</span>
+          <div class="approval-date">
+            <div> {{request.fromDate}}</div>
+            <div>{{request.toDate}}</div>
+          </div>
+          <div class="status-container">
+            <div class="status" [ngClass]="request.type">{{ request.status }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+
+

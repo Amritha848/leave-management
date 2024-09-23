@@ -1,0 +1,9 @@
+<div id="wrapper">
+    <form [formGroup]="sendOtp" (ngSubmit)="email()">
+        <h1>Forgot Password</h1>
+        <label for="Email" id="Emailtxt">Email</label>
+        <input type="text" id="Email" formControlName="toEmail" placeholder="name@gmail.com">
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+  
