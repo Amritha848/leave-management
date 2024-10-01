@@ -8,7 +8,7 @@
 .loginimg {
     width: 65%;
     height: 100%;
-    display: block; 
+    display: block;
 }
 
 #wrapper {
@@ -27,7 +27,7 @@
 }
 
 h1 {
-    
+
     color: black;
     margin-left: 37%;
     padding-bottom: 10px;
@@ -38,32 +38,33 @@ label{
 #Manager,#EID, #Department, #role{
     width: 323px;
     height: 42px;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
     margin-left: 30px;
     margin-top: 10px;
-   
+
     font-size: 500;
     border: none; /* Remove border */
     border: 1px solid rgb(215, 215, 215); /* Add bottom border for underline effect */
     outline: none; /* Remove outline */
-    border-radius: 10px;
-    border-width: 2px;
-    padding-left:10px
-    
+    border-radius: 5px;
+    padding-left:10px;
+
 }
  #password,#name,#Email,#MID,#Phone{
-    width: 300px;
+    width: 304px;
     height: 39px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    margin-top: 10px;
-   
+    margin-bottom: 17px;
+    margin-left: 31px;
+    margin-top: 1px;
+    border-radius: 5px;
     font-size: 500;
     border: none; /* Remove border */
     border: 1px solid rgb(215, 215, 215); /* Add bottom border for underline effect */
     outline: none; /* Remove outline */
-    border-radius: 10px;
-    border-width: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+
 }
 #EID, #password,#Department,#Manager,#name,#role,#Email,#MID,#Phone::placeholder{
     font-size: 15px;
@@ -128,10 +129,11 @@ label {
 }
 form{
     margin-left: 20px;
+
 }
 
 .h1over {
-    color: white; 
+    color: white;
 }
 
 
@@ -145,10 +147,11 @@ form{
 
 .eye{
     position: absolute;
-    right:160px;
-    top: 43%;
+    right:100px;
+    top: 38.5%;
     transform: translateY(-50%);
     color: black;
+
 }
 .requiredname{
     display: block;
@@ -156,3 +159,45 @@ form{
 span{
     padding-left: 10%;
 }
+.registers{
+  text-align: left;
+  margin-left: -13%;
+  margin-top: -5%;
+}
+.department{
+  background-color:whitesmoke;
+}
+.submits{
+  text-align: center;
+  cursor: pointer;
+  background-color:#0066b2;
+  color: white;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin-left: 10%;
+  border-color: #0066b2;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+#role,#Department,#Manager{
+  margin-top: 1px;
+}
+
+input::placeholder {
+  font-size: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.login{
+  font-size: x-small;
+  color: #0066b2;
+}
+
+
+
+
+

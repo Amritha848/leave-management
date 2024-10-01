@@ -5,43 +5,56 @@
   <div id="wrapper">
     <div class="form">
       <form [formGroup]="registerformE">
-        <h1>Sign Up</h1>
-        <label for="Department">Department Name:</label>
-        <select id="Department" formControlName="departmentName">
-          <option value="" disabled selected hidden>Select Department</option>
-          <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+        <h1 class="registers" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;" >REGISTER <a style=" font-family: Verdana, Geneva, Tahoma, sans-serif;" routerLink="/login" class="login">Login</a></h1>
+
+
+
+        <label for="Department" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Department Name</label>
+        <select  id="Department" formControlName="departmentName" class="department">
+          <option value="" disabled selected hidden style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Select</option>
+          <option *ngFor="let dept of departments" [value]="dept" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ dept }}</option>
         </select>
-        <label for="Name">Name:</label>
-        <input type="text" id="name" formControlName="name" >
+
+
+        <label for="Name" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Name</label>
+        <input type="text" id="name" class="space" formControlName="name" placeholder="Enter">
         <div class="requiredname">
-        <span style="color: red;" *ngIf="registerformE.controls['name'].invalid && clicked">*required</span>
-        
-      </div>
-      <label for="password">Password:</label>
-        <input [type]="changetype ? 'password' : 'text'" id="password" formControlName="password" >
+        <!-- <span style="color: red;" *ngIf="registerformE.controls['name'].invalid && clicked">*required</span> -->
+</div>
+
+
+      <label for="password">Password</label>
+        <input [type]="changetype ? 'password' : 'text'" id="password" formControlName="password" placeholder="Enter">
         <span class="eye" (click)="viewpass()"><i [ngClass]="visible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i></span>
-        <span  style="color: red;" *ngIf="registerformE.controls['password'].invalid && clicked">*required</span>
-        
-        
-        <label for="role">Role:</label>
-        <select id="role" formControlName="role">
-          <option value="" disabled selected hidden>Select Role</option>
-          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        <!-- <span  style="color: red;" *ngIf="registerformE.controls['password'].invalid && clicked">*required</span> -->
+
+
+        <label for="role" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Job Role</label>
+        <select id="role" formControlName="role" class="department">
+          <option value="" disabled selected hidden style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Select</option>
+          <option *ngFor="let role of roles" [value]="role" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ role }}</option>
         </select>
-        <label for="Phone">Phone number:</label>
-        <input type="text" id="Phone" formControlName="mobileNo" >
-        <label for="Email">Email:</label>
-        <input type="text" id="Email" formControlName="email" >
+
+
+        <label for="Phone" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;" >Mobile Number</label>
+        <input type="text" id="Phone" formControlName="mobileNo" placeholder="Enter">
+
+
+        <label for="Email" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Email Id</label>
+        <input type="text" id="Email" formControlName="email" placeholder="Enter">
+
+
         <div>
-          <label for="Manager">ManagerID:</label>
-        <select   id="Manager" formControlName="manager" >
-          <option value="" disabled selected hidden>Select managerId<span class="required-asterisk"></span></option>
+          <label for="Manager" style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Manager ID</label>
+        <select   id="Manager" formControlName="manager" class="department">
+          <option value="" disabled selected hidden style=" font-family: Verdana, Geneva, Tahoma, sans-serif;">Select<span class="required-asterisk"></span></option>
           <option *ngFor="let id of managerIds" [value]="id">{{ id }}</option>
-        </select> 
+        </select>
       </div>
-        
-        <button class="btn" type="submit" (click)="registerE()">Sign Up
-        </button>
+
+
+          <input type="text" name="submit" id="submit" class="submits" value="SUBMIT" (click)="registerE()">
+
       </form>
     </div>
   </div>

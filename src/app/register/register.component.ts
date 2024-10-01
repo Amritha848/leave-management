@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { InventoryService } from '../inventory.service';
-import { AlertService } from '../alert.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AlertService } from '../alert.service';
+import { InventoryService } from '../inventory.service';
 import { SpinnerComponent } from './spinner/spinner.component';
 
 @Component({
@@ -12,8 +12,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  visible: boolean = true;
-  changetype: boolean = true;
+  visible: boolean = false;
+  changetype: boolean = false;
   registerformE:any= FormGroup;
   errorMessage: string = '';
   visibleEmployeeForm: boolean = false;
@@ -84,7 +84,7 @@ export class RegisterComponent implements OnInit {
           if (res?.statusCode === 201) {
             dialogRef.afterClosed().subscribe(() => {
               setTimeout(() => {
-                
+
               }, 10000); // Wait for 5 seconds before navigating
             });
             this.router.navigate(['/login']);

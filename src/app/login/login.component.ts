@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { InventoryService } from '../inventory.service';
 import { AlertService } from '../alert.service';
+import { InventoryService } from '../inventory.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,8 +14,9 @@ export class LoginComponent implements OnInit {
   visible: boolean = true;
   changetype: boolean = true;
 
-  
-  
+
+
+
 
   constructor(
     private router: Router,
@@ -32,7 +33,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginNew() {
+    console.log('button clicked');
     if (this.loginForm.valid) {
+      console.log('Form is valid');
       this.inser.loginNew(this.loginForm.value).subscribe((res: any) => {
           if (res.statusCode === 200) {
 

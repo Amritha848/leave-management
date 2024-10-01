@@ -3,11 +3,21 @@
     <mat-spinner></mat-spinner>
   </div>
   <div *ngIf="showSuccessMessage" class="message">
-    <button><i class="fa-solid fa-xmark" style="color: #e13737;" (click)=" closeDialog()"></i></button>
+    <!-- <button><i class="fa-solid fa-xmark" style="color: #e13737;" (click)=" closeDialog()"></i></button>
     <h1>Registration Successful</h1>
-    <p>Your Employee Id will be sent to your mail.</p>
-    
-    
+    <p>Your Employee has sent to your email Id. Please check your registered email.</p> -->
+
+
+
+    <div *ngIf="showSuccessMessage" class="message">
+
+      <h1 style=" font-family: Verdana, Geneva, Tahoma, sans-serif;" class = "registration">Registration Successful!</h1>
+      <p style=" font-family: Verdana, Geneva, Tahoma, sans-serif;"   class="paragraph">The userId has sent to your email Id.<br/> Please check your registered email.</p>
+      <input style=" font-family: Verdana, Geneva, Tahoma, sans-serif;" type="button"  name="ok" id="ok" value="OK" class="button" (click)=" closeDialog()" />
+
+    </div>
+
+
   </div>
 </div>
 

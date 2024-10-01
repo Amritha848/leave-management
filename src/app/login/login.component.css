@@ -8,7 +8,7 @@
 .loginimg {
     width: 65%;
     height: 100%;
-    display: block; 
+    display: block;
 }
 
 #wrapper {
@@ -26,7 +26,7 @@
 }
 
 h1 {
-    
+
     color: black;
     margin-left: 40%;
     margin-bottom: 10%;
@@ -37,13 +37,12 @@ h1 {
     height: 50px;
     margin-bottom: 30px;
     margin-left: 30px;
-   
     font-size: 500;
     border: none; /* Remove border */
     border: 1px solid rgb(215, 215, 215); /* Add bottom border for underline effect */
     outline: none; /* Remove outline */
-    border-radius: 10px;
     border-width: 2px;
+
 }
 
 input{
@@ -58,21 +57,20 @@ label{
 
 
 .ForgotPassword {
-    display: flex;
-    justify-content: right;
-    align-items: center;
     color: black;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -24%;
+
 }
 
-label {
+label{
     color: black;
 }
 
 .register {
     font-weight: 500;
-    color: black;
+    color: blue;
 }
 
 .registernow {
@@ -123,7 +121,7 @@ form{
 }
 
 .h1over {
-    color: white; 
+    color: white;
 }
 @keyframes fadeIn {
     from {
@@ -175,3 +173,68 @@ form{
     font-weight: bold;
     margin-bottom: 10px;
 }
+.center-text {
+  text-align: center;   /* Center the text */
+  border-color: #3457D5;   /* Blue border */
+  border-width: 1px;    /* Optional: adjust border width */
+  border-style: solid;  /* Solid border */
+  padding: 0px;         /* Optional: add padding for better look */
+  width: 115%;
+  height: 50px;
+  margin-bottom: 30px;
+  margin-left: 32px;
+  font-size: 500;
+  color: #3457D5;
+  cursor: pointer;
+}
+.signin{
+  text-align: center;   /* Center the text */
+  border-color:#3457D5;  /* Blue border */
+  border-width: 1px;    /* Optional: adjust border width */
+  border-style: solid;  /* Solid border */
+  padding: 10px;         /* Optional: add padding for better look */
+  width: 115%;
+  height: 50px;
+  margin-bottom: 5px;
+  margin-left: 32px;
+  font-size: 500;
+  color: white;
+  background-color: #3457D5;
+  cursor: pointer;
+
+}
+.initial-container {
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  margin: 10px auto;
+  margin-left: 0px;
+
+}
+.input-field{
+
+  padding-left: 30px; /* Adds space for the icon */
+   margin-top: 2%;
+}
+.input-icon {
+  position: absolute;
+  left: 38px;
+  top: 24%;
+  transform: translateY(-50%);
+  color:black; /* Adjust the color of the icon */
+}
+.input-password{
+  position: absolute;
+  left: 13%;
+  top: 75%;
+  transform: translateY(-50%);
+  color:black; /* Adjust the color of the icon */
+}
+.one{
+  margin-left: 9%;
+}
+.form{
+ margin-left: -39%;
+}
+
+
+
